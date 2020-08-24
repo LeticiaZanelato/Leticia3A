@@ -1,0 +1,110 @@
+
+
+
+		<!DOCTYPE html>
+			
+			<html lang="pt-br">
+    <head>
+        
+	<meta charset="UTF-8">
+        
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+                             <title>Lele </title>
+
+        
+		
+        <style>
+
+          .container{ margin: auto;margin-top: 20px;background: #DDA0DD; border-radius: 11px;width: 900px;padding: 15px;
+          }body {background: #8B008B;}#alerta{padding-bottom: 18px;
+          }
+
+        </style>
+
+    </head>
+    <body>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand Lele" href="index.html">principal</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+                  </div>
+                  </li>
+              </ul>
+            </div>
+        </nav>
+
+      <div class="container">
+        <form id="Zanelato">
+            <div class="form-group input-container">
+              <label for="nome">Nome</label>
+              <input type="text" class="form-control" id="nome">
+            </div>
+
+            <div class="form-group input-container">
+              <label for="email">Email</label>
+              <input type="text" class="form-control" id="email">
+            </div>
+
+            <div class="form-group input-container">
+              <label for="telefono">Telefono</label>
+              <input type="text" class="form-control" id="telefone">
+            </div>
+
+            <div id="alerta"></div>
+
+            <button type="button" class="btn btn-outline-success" onclick="salvar()">Salvando tudinho</button>
+            <button type="reset" class="btn btn-outline-success" onclick="limpar()">Limpando tudinho</button>
+        </form>
+      </div>
+
+        <script>
+
+                let nome = document.querySelector('input#nome')
+                let email = document.querySelector('input#email')
+                let telefono = document.querySelector('input#telefono')
+                let alertei = document.querySelector('div#alertei')
+
+            function salvar() {
+                if (nome.value.length == 0 || email.value.length == 0 || telefono.value.length == 0) {
+					
+					alertei.innerHTML = `<i>Errrouuu</i>`
+                    alerta.style.color = '#e33710'
+                
+                    if(nome.value == '') {
+                        nome.style.borderColor = "#e33710"
+                    }
+                    if (email.value == '') {
+                        email.style.borderColor = "#e33710"
+               }
+                  if (telefone.value == '') {
+                        telefone.style.borderColor = "#e33710"
+                   }
+      }else {
+                    console.log(`Nome: ${nome.value}`)
+                    console.log(`E-mail: ${email.value}`);
+                    console.log(`Telefone: ${telefone.value}`)
+
+                    nome.style.borderColor = ""
+                    email.style.borderColor = ""
+                    telefone.style.borderColor = ""
+
+                    alerta.innerHTML = `<i>|Conseguiu, Parabens</i>`;
+                    alerta.style.color = '#19d13e'
+                }
+            }
+
+            function limpar() {
+                alerta.innerHTML = ""
+                nome.style.borderColor = ""
+                email.style.borderColor = ""
+                telefone.style.borderColor = ""
+        }  
+
+        </script>
+    </body>
+</html>
